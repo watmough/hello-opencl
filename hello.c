@@ -1,5 +1,10 @@
 #include <stdio.h>
-#include <OpenCL/opencl.h>
+#ifdef DARWIN
+	#include <OpenCL/opencl.h>
+#else
+	#include <CL/opencl.h>
+#endif
+
 #define DATA_SIZE (1024)
 const char *KernelSource =
   "__kernel void square(__global float* input, __global float* output, const unsigned int count) { \n" \
