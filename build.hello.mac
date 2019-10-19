@@ -1,0 +1,1 @@
+clang -g -std=c17 -O0 -framework OpenCL -o hello hello.c
